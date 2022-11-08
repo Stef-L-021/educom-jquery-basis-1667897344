@@ -18,19 +18,23 @@
                 if(itemValue <= value) {
                     $(elem).addClass('red')
                 }
-            })
+            }) // eindeigd eerdere sterren worden rood functie
 
-        })
+            .ajax({
+            url: "https://api.dev-master.ninja/js/rating",
+            method: "POST",
+            data: {rating: value},
+            success: function(result) {
+                ///code
+            }
+            }) // eindigd ajax functie
 
-      })
-      .ajax({
-        url: "https://api.dev-master.ninja/js/rating",
-        method: "POST",
-        data: {rating: value},
-        success: function(result) {
-            ///code
-        }
-      })
+        }) /// Eindigd click functie
+
+      }) //// eindigd document ready
+
+
+
     </script>
   </head>
   <body>
