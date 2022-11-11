@@ -20,11 +20,14 @@
                 }
             }) // eindeigd eerdere sterren worden rood functie
 
-            .ajax({
+            $.ajax({                                                // Let op hier met de $ dat deze erbij moet!
             url: "https://api.dev-master.ninja/js/rating",
             method: "POST",
             data: {rating: value},
             success: function(result) {
+              console.log(result)
+              console.log(result.result)
+              // alert("hallo")
                 ///code
             }
             }) // eindigd ajax functie
