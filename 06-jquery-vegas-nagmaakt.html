@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="css/vegas-style.css"/>     <!-- voegt CSS bestand toe -->
+        <link rel="stylesheet" href="vegas/vegas.css"/>          <!-- Voegt Vegas stylesheet toe-->
+        <script src="js/jquery.js"></script>
+        <script src="vegas/vegas.js"> </script>                 <!-- Voegt Vegas JQuery plugin toe-->
+        
+        <script>
+            $(document).ready( function() {
+
+                const mySlides = [
+                {src: "https://picsum.photos/id/1/1900/1200", title: "Title #1", subtitle: "Subtitle #1"},
+                {src: "https://picsum.photos/id/10/1900/1200", title: "Title #2", subtitle: "Subtitle #2"},
+                {src: "https://picsum.photos/id/100/1900/1200", title: "Title #3", subtitle: "Subtitle #3"},
+                {src: "https://picsum.photos/id/1000/1900/1200", title: "Title #4", subtitle: "Subtitle #4"},
+                ] // Einde slide sources
+                    
+                $("#background-image").vegas({                               // let op de #!!! dit is een ID voor later en hier moet dus een #
+                    overlay: 'vegas/overlays/02.png',                        // Voegt een vegas overlay toe
+                    slides: mySlides,
+                    walk: function (index, slideSettings) {
+                        $(".text-block h1").html(mySlides[index].title)
+                        $(".text-block h4").html(mySlides[index].subtitle)
+                    }
+                }) // Einde background-image functie
+
+            }) // Einde .ready functie
+        </script>
+    </head>
+    <body>
+        <div id="background-image"> 
+
+            <div class="text-block">
+                <h1></h1>
+                <h4></h4>
+            </div> <!-- Einde text-block -->
+            
+        </div> <!-- background-image -->
+    </body>
+</html>
